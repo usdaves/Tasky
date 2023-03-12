@@ -14,3 +14,5 @@ allprojects {
   apply from: "$rootDir/tools/detekt.gradle"
   apply from: "$rootDir/tools/versions.gradle"
 }
+
+apply from: "$rootDir/tools/githooks.gradle"

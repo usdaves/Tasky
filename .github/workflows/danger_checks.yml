@@ -19,6 +19,9 @@ jobs:
         with:
           ruby-version: 2.6
 
+      - name: Granting permission for ./gradlew
+        run: chmod +x gradlew
+
       - name: Danger Checks
         run: |
           ./gradlew dependencyUpdates

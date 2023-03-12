@@ -1,0 +1,16 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+workspace.xml
+misc.xml
+libraries
+caches
+navEditor.xml
+tasks.xml
+modules.xml
+compiler.xml
+jarRepositories.xml
+deploymentTargetDropDown.xml
+androidTestResultsUserPreferences.xml
+git_toolbox_prj.xml

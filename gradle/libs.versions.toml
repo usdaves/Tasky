@@ -1,8 +1,9 @@
 [versions]
 gradle-android = "7.4.2"
-kotlin-android = "1.8.0"
+kotlin-android = "1.8.10"
 kotlinter = "3.13.0"
 detekt = "1.22.0"
+versions = "0.46.0"
 
 coreKtx = "1.9.0"
 appCompat = "1.6.1"
@@ -30,3 +31,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-an
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-android" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }

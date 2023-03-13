@@ -23,7 +23,7 @@ import app.tasky.auth.domain.usecase.validation.SignInValidationResult
 sealed interface SignInResult {
   object Authenticating : SignInResult
   object RetrievingProfileInfo : SignInResult
-  object Authenticated : SignInResult
+  object Completed : SignInResult
 
   sealed interface Failure : SignInResult {
     object NoNetworkConnection : Failure

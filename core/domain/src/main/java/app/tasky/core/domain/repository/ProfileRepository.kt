@@ -14,18 +14,13 @@
  * limitations under the License.
  */
 
-package app.tasky.auth.domain.repository
+package app.tasky.core.domain.repository
 
 // Created by usdaves(Usmon Abdurakhmanov) on 3/13/2023
 
-interface AuthRepository {
-  suspend fun signIn(email: String, password: String): Result<String>
-  suspend fun signUp(displayName: String, email: String, password: String): Result<String>
+interface ProfileRepository {
 
-  companion object {
-    const val MIN_DISPLAY_NAME_LENGTH = 2
-    const val MAX_DISPLAY_NAME_LENGTH = 32
-    const val MIN_PASSWORD_LENGTH = 8
-    const val MAX_PASSWORD_LENGTH = 64
-  }
+  suspend fun fetchUserProfileById(userId: String): Result<Unit>
+
+  suspend fun setUserProfile(userId: String, displayName: String, email: String): Result<Unit>
 }

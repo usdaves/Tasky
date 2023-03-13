@@ -1,0 +1,7 @@
+apply from: "$rootDir/plugins/kotlin-jvm.gradle"
+
+dependencies {
+  implementation project(":core:domain")
+
+  implementation(libs.kotlinx.coroutines.core)
+}

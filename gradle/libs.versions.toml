@@ -5,6 +5,7 @@ kotlinter = "3.13.0"
 detekt = "1.22.0"
 versions = "0.46.0"
 
+desugar = "2.0.2"
 coroutines = "1.6.4"
 coreKtx = "1.9.0"
 appCompat = "1.6.1"
@@ -20,6 +21,7 @@ junitExt = "1.1.5"
 espresso = "3.5.1"
 
 [libraries]
+android-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 androidx-coreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appCompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }

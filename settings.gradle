@@ -25,3 +25,6 @@ include ':onboarding:presentation'
 
 // Auth feature modules
 include ':auth:domain'
+
+// Profile feature modules
+include ':profile:domain'

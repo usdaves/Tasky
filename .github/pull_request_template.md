@@ -8,7 +8,7 @@
 
 ## Screenshot/Gif
 
-<!-- If applicable, show off the user facing changes. -->
+<!-- If applicable, show off the user-facing changes. -->
 
 <details>
 

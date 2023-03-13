@@ -1,0 +1,12 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+
+android {
+  namespace 'app.tasky.onboarding.presentation'
+}
+
+dependencies {
+  implementation project(":core:presentation")
+
+  implementation(libs.google.material)
+  implementation(libs.androidx.fragment)
+}

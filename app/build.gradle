@@ -38,6 +38,8 @@ android {
 
 dependencies {
 
+  implementation project(":core:presentation")
+
   implementation libs.androidx.coreKtx
   implementation libs.androidx.appCompat
   implementation libs.androidx.constraintLayout

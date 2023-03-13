@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 
-package app.tasky.auth.domain.util
+package app.tasky.core.domain.util
 
 class NoNetworkConnectionException : RuntimeException("Couldn't connect to the server. Check your internet connection")

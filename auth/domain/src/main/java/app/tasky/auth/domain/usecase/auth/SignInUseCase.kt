@@ -22,8 +22,8 @@ import app.tasky.auth.domain.repository.SignInResult.Failure
 import app.tasky.auth.domain.usecase.validation.SignInValidationResult
 import app.tasky.auth.domain.usecase.validation.SignInValidationUseCase
 import app.tasky.auth.domain.util.InvalidCredentialsException
-import app.tasky.core.domain.repository.ProfileRepository
 import app.tasky.core.domain.util.NoNetworkConnectionException
+import app.tasky.profile.domain.repository.ProfileRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.flow

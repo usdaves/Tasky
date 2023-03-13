@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package app.tasky.core.domain.repository
+package app.tasky.profile.domain.repository
 
 // Created by usdaves(Usmon Abdurakhmanov) on 3/13/2023
 

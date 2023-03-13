@@ -14,24 +14,17 @@
  * limitations under the License.
  */
 
-package app.tasky.auth.domain.repository
-
-import app.tasky.auth.domain.usecase.validation.SignInValidationResult
+package app.tasky.auth.domain.usecase.validation
 
 // Created by usdaves(Usmon Abdurakhmanov) on 3/13/2023
 
-sealed interface SignInResult {
-  object Authenticating : SignInResult
-  object RetrievingProfileInfo : SignInResult
-  object Authenticated : SignInResult
-
-  sealed interface Failure : SignInResult {
-    object NoNetworkConnection : Failure
-
-    @JvmInline
-    value class InvalidCredentials(val cause: SignInValidationResult) : Failure
-
-    @JvmInline
-    value class UnknownError(val message: String) : Failure
-  }
+sealed interface SignUpValidationResult {
+  object EmptyDisplayName : SignUpValidationResult
+  object TooShortDisplayName : SignUpValidationResult
+  object TooLongDisplayName : SignUpValidationResult
+  object EmptyEmail : SignUpValidationResult
+  object InvalidEmail : SignUpValidationResult
+  object EmptyPassword : SignUpValidationResult
+  object TooShortPassword : SignUpValidationResult
+  object TooLongPassword : SignUpValidationResult
 }

@@ -16,7 +16,9 @@
 
 package app.tasky.auth.domain.repository
 
-// Created by usdaves(Usmon Abdurakhmanov) on 2/23/2023
+import app.tasky.auth.domain.usecase.validation.SignUpValidationResult
+
+// Created by usdaves(Usmon Abdurakhmanov) on 3/13/2023
 
 sealed interface SignUpResult {
   object Authenticating : SignUpResult
@@ -27,6 +29,9 @@ sealed interface SignUpResult {
     object NoNetworkConnection : Failure
 
     object EmailAlreadyInUse : Failure
+
+    @JvmInline
+    value class InvalidCredentials(val cause: SignUpValidationResult) : Failure
 
     @JvmInline
     value class UnknownError(val message: String) : Failure

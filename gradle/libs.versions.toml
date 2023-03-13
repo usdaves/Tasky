@@ -5,20 +5,32 @@ kotlinter = "3.13.0"
 detekt = "1.22.0"
 versions = "0.46.0"
 
+coroutines = "1.6.4"
 coreKtx = "1.9.0"
 appCompat = "1.6.1"
 material = "1.8.0"
+acticity = "1.6.1"
+fragment = "1.5.5"
 constraintLayout = "2.1.4"
+timber = "5.0.1"
+bindables = "1.1.0"
+
 junit = "4.13.2"
 junitExt = "1.1.5"
 espresso = "3.5.1"
 
 [libraries]
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 androidx-coreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appCompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
 androidx-constraintLayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintLayout" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "acticity" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+skydoves-bindables = { group = "com.github.skydoves", name = "bindables", version.ref = "bindables" }
 
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junitExt = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt" }
 androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }

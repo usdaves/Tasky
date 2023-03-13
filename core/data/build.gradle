@@ -1,0 +1,15 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+apply plugin: 'com.google.dagger.hilt.android'
+apply plugin: 'org.jetbrains.kotlin.kapt'
+
+android {
+  namespace 'app.tasky.core.data'
+}
+
+dependencies {
+  implementation project(":core:domain")
+
+  implementation(libs.androidx.datastore)
+  implementation(libs.dagger.hilt.android)
+  kapt(libs.dagger.hilt.compiler)
+}

@@ -14,3 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Tasky"
 include ':app'
+
+// Core modules
+include ':core:data'
+include ':core:domain'
+include ':core:presentation'

@@ -18,10 +18,18 @@ package app.tasky.core.presentation.adapter
 
 import android.view.View
 import androidx.databinding.BindingAdapter
+import app.tasky.core.presentation.Text
+import com.google.android.material.textfield.TextInputLayout
 
 // Created by usdaves(Usmon Abdurakhmanov) on 3/13/2023
 
 @BindingAdapter("hideIfNull")
 fun View.hideIfNull(value: Any?) {
   visibility = if (value == null) View.GONE else View.VISIBLE
+}
+
+@BindingAdapter("error")
+fun TextInputLayout.setError(error: Text?) {
+  isErrorEnabled = error != null
+  setError(error?.getString(context))
 }

@@ -1,0 +1,14 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+apply plugin: 'org.jetbrains.kotlin.kapt'
+
+android {
+  namespace 'app.tasky.core.presentation'
+
+  buildFeatures {
+    dataBinding true
+  }
+}
+
+dependencies {
+
+}

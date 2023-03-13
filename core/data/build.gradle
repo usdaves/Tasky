@@ -1,0 +1,9 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+
+android {
+  namespace 'app.tasky.core.data'
+}
+
+dependencies {
+  implementation project(":core:domain")
+}

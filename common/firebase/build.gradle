@@ -1,0 +1,16 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+apply plugin: "org.jetbrains.kotlin.kapt"
+apply plugin: "com.google.dagger.hilt.android"
+apply plugin: "com.google.gms.google-services"
+
+android {
+  namespace 'app.tasky.android.firebase'
+}
+
+dependencies {
+  implementation(libs.firebase.auth)
+  implementation(libs.firebase.firestore)
+
+  implementation(libs.dagger.hilt.android)
+  kapt(libs.dagger.hilt.compiler)
+}

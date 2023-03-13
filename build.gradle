@@ -8,6 +8,7 @@ plugins {
   alias(libs.plugins.kotlinter) apply false
   alias(libs.plugins.detekt) apply false
   alias(libs.plugins.versions) apply false
+  alias(libs.plugins.google.services) apply false
 }
 
 allprojects {

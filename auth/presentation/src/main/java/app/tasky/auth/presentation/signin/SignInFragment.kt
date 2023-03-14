@@ -16,10 +16,37 @@
 
 package app.tasky.auth.presentation.signin
 
+import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import app.tasky.auth.presentation.R
 import app.tasky.auth.presentation.databinding.FragmentSignInBinding
+import app.tasky.core.presentation.util.collectLatest
 import com.skydoves.bindables.BindingFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 // Created by usdaves(Usmon Abdurakhmanov) on 3/14/2023
 
-class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_sign_in)
+@AndroidEntryPoint
+class SignInFragment : BindingFragment<FragmentSignInBinding>(R.layout.fragment_sign_in) {
+
+  private val viewModel: SignInViewModel by viewModels()
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    binding.lifecycleOwner = viewLifecycleOwner
+    binding.viewModel = viewModel
+
+    collectLatest(viewModel.viewEvent) { event ->
+      when (event) {
+        SignInViewEvent.NavigateToMain -> TODO("Not yet implemented")
+
+        SignInViewEvent.NavigateViewSignUp -> TODO("Not yet implemented")
+
+        is SignInViewEvent.ShowMessage -> {
+          Toast.makeText(requireContext(), event.message.getString(requireContext()), Toast.LENGTH_SHORT).show()
+        }
+      }
+    }
+  }
+}

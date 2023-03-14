@@ -15,4 +15,12 @@
   ~ limitations under the License.
   -->
 
-<layout />
+<layout>
+
+  <data>
+
+    <variable
+      name="viewModel"
+      type="app.tasky.auth.presentation.signin.SignInViewModel" />
+  </data>
+</layout>

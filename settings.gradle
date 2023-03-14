@@ -27,6 +27,7 @@ include ':onboarding:presentation'
 include ':auth:domain'
 
 // Profile feature modules
+include ':profile:data'
 include ':profile:domain'
 
 // Common modules that every module can include if needed

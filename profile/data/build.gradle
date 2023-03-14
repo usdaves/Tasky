@@ -10,6 +10,11 @@ dependencies {
 
   implementation project(":profile:domain")
 
+  implementation project(":core:domain")
+  implementation project(":core:data")
+
+  implementation project(":common:firebase")
+
   implementation(libs.firebase.firestore)
 
   implementation(libs.dagger.hilt.android)

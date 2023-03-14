@@ -1,0 +1,17 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+apply plugin: "org.jetbrains.kotlin.kapt"
+apply plugin: "com.google.dagger.hilt.android"
+
+android {
+  namespace 'app.tasky.profile.data'
+}
+
+dependencies {
+
+  implementation project(":profile:domain")
+
+  implementation(libs.firebase.firestore)
+
+  implementation(libs.dagger.hilt.android)
+  kapt(libs.dagger.hilt.compiler)
+}

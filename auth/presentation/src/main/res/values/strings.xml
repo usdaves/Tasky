@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2023 usdaves(Usmon Abdurakhmanov)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+  <string name="sign_in_title">Welcome back!</string>
+  <string name="sign_in_your_profile">Sign In your profile</string>
+  <string name="sign_in">Sign In</string>
+  <string name="sign_up">Sign Up</string>
+  <string name="sign_in_sign_in_with_google">Sign In with Google</string>
+  <string name="sign_in_sign_up_with_google">Sign Up with Google</string>
+  <string name="sign_in_or_continue_with">or continue with</string>
+  <string name="display_name">Display Name</string>
+  <string name="email_address">Email Address</string>
+  <string name="password">Password</string>
+  <string name="sign_up_title">Welcome!</string>
+  <string name="sign_up_your_profile">Create your profile</string>
+  <string name="sign_up_sign_in_with_google">Sign Up with Google</string>
+  <string name="empty_display_name">Display name could not be empty!</string>
+  <string name="empty_email">Email could not be empty!</string>
+  <string name="empty_password">Password could not be empty!</string>
+  <string name="short_display_name">Display name must contains at least %d characters</string>
+  <string name="short_password">Password must contains at least %d characters</string>
+  <string name="long_display_name">Display name must contains at most %d characters</string>
+  <string name="long_password">Password must contains at most %d characters</string>
+  <string name="invalid_credentials">Email or password went wrong. Please, try again!</string>
+  <string name="no_network_connection">Could not connect to the server. Please, check you internet connection!</string>
+  <string name="signing_with_google_not_supported">Signing with Google not supported yet. Please, use your email address to sign in/up</string>
+  <string name="invalid_email">Email is not valid. Please, enter a valid email address.</string>
+  <string name="email_in_use">This email is already in use. Please, use another one, or go to Sign In screen.</string>
+  <string name="authenticating">Authenticating. Please, wait…</string>
+  <string name="retrieving_profile_info">Retrieving profile info. Please, wait…</string>
+</resources>

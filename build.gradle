@@ -18,3 +18,4 @@ allprojects {
 }
 
 apply from: "$rootDir/tools/githooks.gradle"
+apply from: "$rootDir/tools/mock-google-services.gradle"

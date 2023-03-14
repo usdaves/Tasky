@@ -1,0 +1,9 @@
+task copyMockGoogleService(type: Copy) {
+  description 'Copies the mock-google-services.json from / to the /common/firebase/ folder as a google-services.json'
+  group 'google-services'
+  from("$rootDir/") {
+    include("*google-services.json")
+    rename('mock-(.+)', '$1')
+  }
+  into "$rootDir/common/firebase/"
+}

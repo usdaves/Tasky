@@ -19,6 +19,9 @@ jobs:
       - name: Granting permission for ./gradlew
         run: chmod +x gradlew
 
+      - name: Copy mock-google-services.json into /common/firebase folder as google-services.json
+        run: ./gradlew copyMockGoogleService
+
       - name: Build Project
         run: ./gradlew assemble
 

@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-package app.tasky.auth.domain.util
+package app.tasky.auth.data.remote
 
-class InvalidCredentialsException @JvmOverloads constructor(
-  cause: Throwable? = null,
-) : RuntimeException("Email or password went wrong. Please, try again", cause)
+// Created by usdaves(Usmon Abdurakhmanov) on 3/14/2023
+
+interface AuthApi {
+  suspend fun signIn(email: String, password: String): String
+  suspend fun signUp(email: String, password: String): String
+}

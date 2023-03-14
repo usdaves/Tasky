@@ -1,0 +1,25 @@
+apply from: "$rootDir/plugins/kotlin-android.gradle"
+apply plugin: "org.jetbrains.kotlin.kapt"
+apply plugin: "com.google.dagger.hilt.android"
+
+android {
+  namespace 'app.tasky.auth.data'
+}
+
+dependencies {
+
+  implementation project(":auth:domain")
+
+  implementation project(":profile:data")
+  implementation project(":profile:domain")
+
+  implementation project(":core:data")
+  implementation project(":core:domain")
+
+  implementation project(":common:firebase")
+
+  implementation(libs.firebase.auth)
+
+  implementation(libs.dagger.hilt.android)
+  kapt(libs.dagger.hilt.compiler)
+}

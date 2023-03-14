@@ -24,6 +24,7 @@ include ':core:presentation'
 include ':onboarding:presentation'
 
 // Auth feature modules
+include ':auth:data'
 include ':auth:domain'
 
 // Profile feature modules

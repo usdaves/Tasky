@@ -16,4 +16,6 @@
 
 package app.tasky.core.domain.util
 
-class NoNetworkConnectionException : RuntimeException("Couldn't connect to the server. Check your internet connection")
+class NoNetworkConnectionException @JvmOverloads constructor(
+  cause: Throwable? = null,
+) : RuntimeException("Couldn't connect to the server. Please, Check your internet connection", cause)

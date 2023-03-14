@@ -16,4 +16,6 @@
 
 package app.tasky.auth.domain.util
 
-class InvalidCredentialsException : RuntimeException("Email or password went wrong. Please, try again")
+class InvalidCredentialsException @JvmOverloads constructor(
+  cause: Throwable? = null,
+) : RuntimeException("Email or password went wrong. Please, try again", cause)

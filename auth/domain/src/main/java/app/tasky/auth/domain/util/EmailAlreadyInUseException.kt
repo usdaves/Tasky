@@ -16,4 +16,6 @@
 
 package app.tasky.auth.domain.util
 
-class EmailAlreadyInUseException : RuntimeException("Email is already in use. Please go to SignIn")
+class EmailAlreadyInUseException @JvmOverloads constructor(
+  cause: Throwable? = null,
+) : RuntimeException("Email is already in use. Please go to SignIn, or use other email address", cause)

@@ -33,3 +33,4 @@ include ':profile:domain'
 
 // Common modules that every module can include if needed
 include ':common:firebase'
+include ':auth:presentation'

@@ -16,6 +16,9 @@ dependencies {
 
   implementation project(":core:presentation")
 
+  implementation(libs.androidx.constraintLayout)
+  implementation(libs.google.material)
+
   implementation(libs.androidx.fragment)
   implementation(libs.skydoves.bindables)
 

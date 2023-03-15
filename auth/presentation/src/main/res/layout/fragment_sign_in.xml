@@ -15,7 +15,10 @@
   ~ limitations under the License.
   -->
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:context="app.tasky.auth.presentation.signin.SignInFragment">
 
   <data>
 
@@ -23,4 +26,218 @@
       name="viewModel"
       type="app.tasky.auth.presentation.signin.SignInViewModel" />
   </data>
+
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:theme="@style/Theme.Tasky">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.065" />
+
+      <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.935" />
+
+      <TextView
+        android:id="@+id/_sign_in_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/sign_in_title"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/_sign_in_your_account"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+      <TextView
+        android:id="@+id/_sign_in_your_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:text="@string/sign_in_your_profile"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/email_til"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/_sign_in_title" />
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_til"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        error="@{viewModel.viewState.emailError}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/email_address"
+        app:layout_constraintBottom_toTopOf="@id/password_til"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/_sign_in_your_account"
+        app:startIconDrawable="@drawable/ic_mail_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/email_et"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:autofillHints="emailAddress"
+          android:imeOptions="flagNoExtractUi|actionNext"
+          android:importantForAutofill="yes"
+          android:inputType="textEmailAddress"
+          android:onTextChanged="@{(chars, s, b, c) -> viewModel.onEmailChanged(chars.toString())}"
+          android:text="@{viewModel.viewState.email}" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_til"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        error="@{viewModel.viewState.passwordError}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/password"
+        app:layout_constraintBottom_toTopOf="@id/sign_up_btn"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/email_til"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_lock_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/password_et"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:autofillHints="password"
+          android:imeOptions="flagNoExtractUi|actionDone"
+          android:importantForAutofill="yes"
+          android:inputType="textPassword"
+          android:onTextChanged="@{(chars, s, b, c) -> viewModel.onPasswordChanged(chars.toString())}"
+          android:text="@{viewModel.viewState.password}" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_up_btn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="@{(v) -> viewModel.onSignUpClicked()}"
+        android:paddingVertical="12dp"
+        android:text="@string/sign_up"
+        app:cornerRadius="6dp"
+        app:layout_constraintBottom_toTopOf="@id/_sign_in_continue_with"
+        app:layout_constraintEnd_toStartOf="@id/sign_in_btn"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/password_til" />
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:onClick="@{(v) -> viewModel.onSignInClicked()}"
+        android:paddingVertical="12dp"
+        android:text="@string/sign_in"
+        app:cornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/sign_up_btn"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toEndOf="@id/sign_up_btn"
+        app:layout_constraintTop_toTopOf="@id/sign_up_btn" />
+
+      <TextView
+        android:id="@+id/_sign_in_continue_with"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sign_in_or_continue_with"
+        app:layout_constraintBottom_toTopOf="@id/sign_in_with_google_btn"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_btn" />
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in_with_google_btn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:onClick="@{(v) -> viewModel.onContinueWithGoogleClicked()}"
+        android:paddingVertical="12dp"
+        android:text="@string/sign_in_sign_in_with_google"
+        android:textAllCaps="false"
+        android:textColor="?colorControlNormal"
+        app:icon="@drawable/googleg_standard_color_18"
+        app:iconGravity="textStart"
+        app:iconPadding="12dp"
+        app:iconTint="?colorControlNormal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/_sign_in_continue_with" />
+
+      <FrameLayout
+        hideIfNull="@{viewModel.viewState.loadingText}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:translationZ="10dp"
+        tools:visibility="visible">
+
+        <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:alpha="0.75"
+          android:background="@color/black" />
+
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:orientation="vertical">
+
+          <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+          <TextView
+            text="@{viewModel.viewState.loadingText}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            tools:text="@string/retrieving_profile_info" />
+        </LinearLayout>
+
+      </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>
 </layout>

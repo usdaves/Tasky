@@ -17,6 +17,7 @@
 package app.tasky.core.presentation.adapter
 
 import android.view.View
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import app.tasky.core.presentation.Text
 import com.google.android.material.textfield.TextInputLayout
@@ -32,4 +33,9 @@ fun View.hideIfNull(value: Any?) {
 fun TextInputLayout.setError(error: Text?) {
   isErrorEnabled = error != null
   setError(error?.getString(context))
+}
+
+@BindingAdapter("text")
+fun TextView.setText(text: Text?) {
+  setText(text?.getString(context))
 }

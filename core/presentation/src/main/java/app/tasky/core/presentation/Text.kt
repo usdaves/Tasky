@@ -22,8 +22,7 @@ import java.io.Serializable
 
 // Created by usdaves(Usmon Abdurakhmanov) on 3/6/2023
 
-@JvmInline
-value class Text internal constructor(
+data class Text internal constructor(
   private val value: Any?,
 ) : Serializable {
 
